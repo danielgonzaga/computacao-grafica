@@ -11,9 +11,9 @@ cores = ((1, 0, 0), (1, 1, 0), (0, 1, 0), (0, 1, 1), (0, 0, 1), (1, 0, 1), (0.5,
 def prisma():
     raio = 2
     base = []
-    angulo = (2 * math.pi) / N
     N = 5
     H = 4
+    angulo = (2 * math.pi) / N
 
     glPushMatrix()
     glTranslatef(0, -2, 0)

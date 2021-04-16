@@ -13,9 +13,9 @@ def tronco():
     raio_menor = 1.2
     base_maior = []
     base_menor = []
-    angulo = (2 * math.pi) / N
     N = 5
     H = 4
+    angulo = (2 * math.pi) / N
 
     glPushMatrix()
     glTranslatef(0, -2, 0)
