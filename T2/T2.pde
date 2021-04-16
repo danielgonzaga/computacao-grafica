@@ -1,16 +1,33 @@
-void setup() {
+float pl_x = 100;
+float pl_y = 600;
+float p2_x = 300;
+float p2_y = 200;
+float p3_x = 500;
+float p3_y = 600;
+float p4_x = 700;
+float p4_y = 200;
+boolean p2_clicked = false;
+boolean p3_clicked = false;
+
+void setup()
+{
   size(750, 700);
 }
 
 void draw() {
-  float pl_x = 100;
-  float pl_y = 600;
-  float p2_x = 300;
-  float p2_y = 200;
-  float p3_x = 500;
-  float p3_y = 600;
-  float p4_x = 700;
-  float p4_y = 200;
+  background(200);
+  
+  if(p2_clicked)
+  {
+    p2_x = mouseX;
+    p2_y = mouseY;
+  }
+  else if(p3_clicked)
+  {
+    p3_x = mouseX;
+    p3_y = mouseY;
+  }
+  
   noFill();
   beginShape();
   for(float i = 0; i <= 1; i += 0.01) {
@@ -29,9 +46,30 @@ void draw() {
     vertex(fx, fy);
   }
   endShape();
-  fill(255, 0, 0);
+  
+  fill(0, 0, 0);
+  
   circle(pl_x, pl_y, 5);
   circle(p2_x, p2_y, 5);
   circle(p3_x, p3_y, 5);
   circle(p4_x, p4_y, 5);
+}
+
+void mousePressed()
+{
+    if(dist(p2_x, p2_y, mouseX, mouseY) < 10)
+    {
+      p2_clicked = true;
+    }
+    if(dist(p3_x, p3_y, mouseX, mouseY) < 10)
+    {
+      p3_clicked = true;
+    }
+  
+}
+
+void mouseReleased()
+{
+  p2_clicked = false;
+  p3_clicked = false;
 }
